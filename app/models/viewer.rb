@@ -12,4 +12,22 @@ class Viewer
     @@all
   end
   
+  def reviewed_movie?(movie)
+    if 
+      return true
+    else 
+      return false
+    end
+  end
+
+  def rate_movie(movie,rating)
+    if viewer.movie != self
+      Review.new(self, movie, rating)
+    else
+      ## code here
+    end
+  end
+
+
+ 
 end
