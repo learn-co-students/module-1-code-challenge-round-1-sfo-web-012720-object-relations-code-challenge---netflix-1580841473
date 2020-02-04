@@ -13,11 +13,11 @@ class Viewer
   end
   
   def reviewed_movie?(movie)
-    if 
-      return true
-    else 
-      return false
-    end
+    # if 
+    #   return true
+    # else 
+    #   return false
+    # end
   end
 
   def rate_movie(movie,rating)
