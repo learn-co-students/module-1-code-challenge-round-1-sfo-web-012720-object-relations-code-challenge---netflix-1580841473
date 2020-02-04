@@ -22,7 +22,7 @@ class Viewer
 
 #almost!
   def reviews
-    Review.all.each do |review| 
+    Review.all.select do |review| 
       review.viewer == self
     end
   end
