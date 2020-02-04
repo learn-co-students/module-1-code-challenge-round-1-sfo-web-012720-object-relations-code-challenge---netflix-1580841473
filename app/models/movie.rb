@@ -21,7 +21,11 @@ class Movie
   end
 
   def average_rating
-    reviews.map { |review| review.rating }.sum / reviews.size
+    if reviews.size > 0
+      reviews.map { |review| review.rating }.sum.to_f / reviews.size
+    else
+      return 0
+    end
   end 
 
   def self.highest_rated
