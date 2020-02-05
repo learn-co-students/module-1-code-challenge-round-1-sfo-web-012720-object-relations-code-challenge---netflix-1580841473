@@ -13,7 +13,7 @@ class Viewer
   end
 
   def reviews
-    Review.all.select {|user_review| user_review.viewer == self.username}
+    Review.all.select {|user_review| user_review.viewer == self}
   end
 
   def reviewed_movies

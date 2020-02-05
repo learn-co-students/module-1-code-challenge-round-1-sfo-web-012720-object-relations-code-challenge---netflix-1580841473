@@ -27,7 +27,7 @@ context 'Model Relationship:' do
     end
 
     it "#movies returns an array of Movie instances reviewed by the Viewer instance" do
-      expect(cs.movies).to eq([antz, casablanca])
+      expect(cs.reviewed_movies).to eq([antz, casablanca])
     end
   end
 

@@ -13,7 +13,7 @@ class Movie
   end
 
   def reviews
-    Review.all.select {|movie_review| movie_review.movie == self.title}
+    Review.all.select {|movie_review| movie_review.movie == self}
   end
 
   def reviewers
@@ -25,9 +25,13 @@ class Movie
   end
 
   def average_rating
-    sum = ratings.sum
-    total_num = ratings.length
-    sum / total_num
+    if ratings.length > 0
+      sum = ratings.sum
+      total_num = ratings.length
+      sum / total_num
+    else  
+      0
+    end
   end
 
   def self.all_avg_ratings
@@ -36,6 +40,6 @@ class Movie
 
   def self.highest_rated
     max_avg_rating = all_avg_ratings.max
-    self.all.select {|movie| movie.average_rating == max_avg_rating}
+    self.all.find {|movie| movie.average_rating == max_avg_rating}
   end
 end
