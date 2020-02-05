@@ -21,16 +21,21 @@ class Viewer
   end
 
   def reviewed_movie?(movie)
-    Review.all.find do |review|
-      if review.viewer == self
-        return true
-      else
-        return false
-      end
-    end
+    # Review.all.find do |review|
+    #   if review.viewer == self
+    #     return true
+    #   else
+    #     return false
+    #   end
+    # end
+    reviewed_movies.include?(movie)
   end
 
   def rate_movie(movie, rating)
-    Review.new(self, movie, rating)
+    if reviewed_movie?(movie)
+      # update movie review rating
+    else
+      Review.new(self, movie, rating)
+    end
   end
 end
