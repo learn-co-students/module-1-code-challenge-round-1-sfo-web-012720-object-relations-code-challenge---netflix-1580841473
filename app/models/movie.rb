@@ -12,4 +12,12 @@ class Movie
     @@all
   end
 
+  def average_rating
+
+  end
+
+  def self.highest_rated
+
+  end
+
 end
